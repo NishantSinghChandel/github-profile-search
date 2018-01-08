@@ -1,0 +1,13 @@
+<div class="component-profile">
+  <input class="search-bar" placeholder="search by name" [(ngModel)]="user_name">
+  <button (click) = 'getData(user_name)'> Search </button>
+  <div class="profile-detail-container">
+    <div class="detail">
+      <div>
+        <img class="img-fluid" [src]="user_detail.avatar_url">
+        {{user_detail.name}}
+      </div>
+    </div>
+  </div>
+</div>
+
