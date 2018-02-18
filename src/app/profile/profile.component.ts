@@ -8,7 +8,7 @@ import {GithubService} from '../github.service';
 })
 export class ProfileComponent implements OnInit {
   user_name = '';
-  private user_detail = [];
+  public user_detail = [];
 
   constructor(private _githubService: GithubService) {
   }

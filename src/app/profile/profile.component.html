@@ -1,12 +1,24 @@
 <div class="component-profile">
-  <input class="search-bar" placeholder="search by name" [(ngModel)]="user_name">
-  <button (click) = 'getData(user_name)'> Search </button>
-  <div class="profile-detail-container">
-    <div class="detail">
-      <div>
-        <img class="img-fluid" [src]="user_detail.avatar_url">
-        {{user_detail.name}}
+  <div class="flex-column">
+    <input class="search-bar" placeholder="search by name" [(ngModel)]="user_name">
+    <button (click)='getData(user_name)'> Search</button>
+  </div>
+
+  <div class="profile-detail-container" *ngIf="user_detail.length != 0">
+    <div class="detail-container ">
+      <div class="flex">
+        <div><img class="img-fluid" [src]="user_detail.avatar_url"></div>
+        <div class="flex-column">
+          <span>followers:{{user_detail.followers}}</span>
+          <span>Following:{{user_detail.following}}</span>
+          <span>Repository:{{user_detail.public_repos}}</span>
+        </div>
       </div>
+      <div>{{user_detail.name}}</div>
+      <div>{{user_detail.bio}}</div>
+      <div>{{user_detail.hireable}}</div>
+      <div>{{user_detail.location}}</div>
+      <div>{{user_detail.company}}</div>
     </div>
   </div>
 </div>
